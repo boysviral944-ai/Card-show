@@ -1,27 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CARD Shop</title>
-</head>
+<div class="product" data-name="CARD Item 2" data-price="199">
+      <div class="product-image">🎮</div>
+      <h3>CARD Item 2</h3>
+      <p>Carding item</p>
+      <div class="price-tag">₹199</div>
+      <button class="buy" onclick="buyProduct('CARD Item 2')">
+        Buy Now
+      </button>
+    </div>
 
-<body>
-  <h1>CARD Shop</h1>
-  <p>Welcome to my CARD items store!</p>
+    <div class="product" data-name="CARD Item 3" data-price="299">
+      <div class="product-image">🔥</div>
+      <h3>CARD Item 3</h3>
+      <p>Carding item</p>
+      <div class="price-tag">₹299</div>
+      <button class="buy" onclick="buyProduct('CARD Item 3')">
+        Buy Now
+      </button>
+    </div>
 
-  <h2>Our Products</h2>
+    <div class="product" data-name="CARD Item 4" data-price="499">
+      <div class="product-image">🏆</div>
+      <h3>CARD Item 4</h3>
+      <p>Carding item</p>
+      <div class="price-tag">₹499</div>
+      <button class="buy" onclick="buyProduct('CARD Item 4')">
+        Buy Now
+      </button>
+    </div>
 
-  <div>
-    <h3>CARD Item 1</h3>
-    <p>Price: ₹99</p>
-    <button>Buy Now</button>
+  </section>
+
+  <div class="contact">
+  
+    <h2>Need Help?</h2>
+    <p>Contact us for your order.</p>
+    <button onclick="contact()">Contact Seller</button>
   </div>
 
-  <div>
-    <h3>CARD Item 2</h3>
-    <p>Price: ₹199</p>
-    <button>Buy Now</button>
-  </div>
+  <script>
+    function searchProducts() {
+      let search = document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+      let products = document.querySelectorAll(".product");
+
+      products.forEach(function(product) {
+        let name = product
+          .getAttribute("data-name")
+          .toLowerCase();
+
+        if (name.includes(search)) {
+          product.style.display = "block";
+        } else {
+          product.style.display = "none";
+        }
+      });
+    }
+
+    function buyProduct(name) {
+      alert("You selected: " + name);
+    }
+
+    function contact() {
+      alert("Seller contact will be added here.");
+    }
+  </script>
+
 </body>
 </html>
